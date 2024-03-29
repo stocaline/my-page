@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/button.css">
+    <title>Richard de Souza Bercheli</title>
+</head>
+
+<body>
+
+    <section id="main" class="active">
+        <div class="container left">
+            <img class="profileImg" src="./assets/fotoPerfil.png" alt="foto de Richard de Souza Bercheli">
+            <div class="content">
+                <h1>Richard de Souza Bercheli</h1>
+                <p>Desenvolvedor JR</p>
+                <div style="display: flex; gap: 10px;">
+                    <a class="btn-bottom" href="https://www.linkedin.com/in/richard-de-souza-bercheli/" target="_blank"><i
+                            class='bx bxl-linkedin'></i></a>
+                    <button id="contato-btn" class="btn-bottom"><i class='bx bxs-contact'></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="container right">
+            <h2>Sobre Mim</h2>
+            <p>
+                Olá! Meu nome é Richard de Souza Bercheli e sou desenvolvedor jr na empresa Innoscience
+                Sou apaixonado por programação e estou sempre em busca de aprender novas tecnologias para aprimorar
+                minhas habilidades. Tenho conhecimentos em Java, Javascript, React, React-Native, Next.js e Python
+            </p>
+
+            <h2>Formação</h2>
+            <p>
+                Atualmente, estou cursando engenharia de software na Uninter e fazendo cursos na Alura, meu nivel de inglês é intermediario.
+            </p>
+            <a id="btn" href="projects.html">Meus Projetos</a>
+        </div>
+
+    </section>
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <form action="#">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <button id="voltar-btn" class="btn-bottom"><i class='bx bx-arrow-back' ></i></button>
+    </section>
+
+    <script>
+        const mainSection = document.getElementById('main');
+        const contatoSection = document.getElementById('contato');
+        const voltarBtn = document.getElementById('voltar-btn');
+        const contatoBtn = document.getElementById('contato-btn');
+
+        const ativarSection = (section) => {
+            section.classList.add('active');
+        };
+
+        const desativarSection = (section) => {
+            section.classList.remove('active');
+        };
+
+        contatoBtn.addEventListener('click', () => {
+            ativarSection(contatoSection);
+            desativarSection(mainSection);
+        });
+
+        voltarBtn.addEventListener('click', () => {
+            ativarSection(mainSection);
+            desativarSection(contatoSection);
+        });
+    </script>
+</body>
+
+</html>
